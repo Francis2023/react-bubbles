@@ -8,13 +8,22 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  
+
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .App {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   display: flex;
-
+  justify-items: center;
   svg {
     height: 100%;
   }
@@ -60,23 +69,26 @@ body,
   margin-right: 36px;
 }
 
-form {
+.loginForm {
   margin-top: 60px;
   display: flex;
   flex-direction: column;
+  justify-items: center;
+  text-align: center;
 
   legend {
     padding-left: 40px;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
     text-decoration: underline;
     margin-bottom: 16px;
   }
 
   label {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 4px 36px 4px 40px;
+    
   }
 
   input {
