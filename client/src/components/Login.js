@@ -25,7 +25,7 @@ handleChange = e => {
 login = e => {
   e.preventDefault();
   axiosWithAuth()
-     .post("/api/login", this.state.credentials)
+     .post("/login", this.state.credentials)
      .then(res => {
        console.log(res)
        localStorage.setItem("token", res.data.payload)
@@ -44,7 +44,7 @@ render(){
                  name="username"
                  value={this.state.credentials.username}
                  onChange={this.handleChange}
-                 placeholder={"enter Username"}
+               
               />
               <br />
               <label>Password</label>

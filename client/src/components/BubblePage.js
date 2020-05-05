@@ -7,10 +7,12 @@ import ColorList from "./ColorList";
 import { axiosWithAuth } from "../utils/axiosWithAuth"
 
 class BubblePage extends React.Component {
-  
-  state ={
-    colorList: []
+  constructor(){
+    super();
+      this.state ={
+        colorList: []
   }
+}
   // fetch your colors data from the server when the component mounts
   // set that data to the colorList state property
 
@@ -20,11 +22,13 @@ class BubblePage extends React.Component {
 
   getData = () => {
      axiosWithAuth()
-       .get("/api/colors")
-       .then(res => {
+       .get("/colors")
+       .then(res =>  {
          console.log(res)
-         this.setState(res.data)
+         this.setState({colorList: res.data})
+         
        })
+       
        .catch( err =>
          console.error(err)
         )
