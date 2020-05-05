@@ -38,12 +38,13 @@ render(){
    return (
       <div className="loginForm">
           <form onSubmit={this.login}>
-              <label>UserName</label>
+              <label>Username</label>
               <input
                  type="text"
                  name="username"
                  value={this.state.credentials.username}
                  onChange={this.handleChange}
+                 placeholder={"enter Username"}
               />
               <br />
               <label>Password</label>
@@ -54,7 +55,7 @@ render(){
                  onChange={this.handleChange}
               />
               <br />
-              <button>Log In</button>
+              <button className="login">Log In</button>
           </form>
       </div>
    )

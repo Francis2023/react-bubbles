@@ -4,22 +4,49 @@ html,
 body,
 #root,
 .App {
-  width: 100%;
-  height: 100%;
+   
   margin: 0;
   padding: 0;
-  
+  text-align: center;
+  background-color: rgb(192, 92, 92);
 
 }
 
 .nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  background-color: rgb(214, 197, 197);
+  justify-content: space-around;
+  align-content: center;
+  margin-top: 0vw;
   width: 100%;
+  height: 4vw;
+  box-sizing: border-box;
+  padding: 1.4vw 2vw 1vw 74vw;
+  color: black;
+  .navLink {
+  
+    list-style-type: none;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+
+    a {
+      text-decoration: none;
+      color: black;
+      list-style-type: none;
+      text-transform: uppercase;
+      font-family: helvetica;
+      box-sizing:border-box;
+    }
+    a:hover {
+       color: rgb(192, 92, 92);
+    }
+  }
+
 }
 
-.App {
+
+/*.App {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   display: flex;
@@ -27,7 +54,7 @@ body,
   svg {
     height: 100%;
   }
-}
+}*/
 
 .spacer {
   height: 100%;
@@ -70,11 +97,23 @@ body,
 }
 
 .loginForm {
-  margin-top: 60px;
-  display: flex;
+  margin: 10vw 5vw 10vw 5vw;
+  padding: 1vw 3vw 1vw 3vw;
+  display: inline-block;
   flex-direction: column;
   justify-items: center;
   text-align: center;
+  width: 35vw;
+  height: 35vw;
+  box-sizing: border-box;
+  
+  
+  form {
+    padding: 8vw 3vw 8vw 3vw;
+    background-color: rgb(214, 197, 197);
+    display: inline-block;
+    border-radius: 6px;
+  }
 
   legend {
     padding-left: 40px;

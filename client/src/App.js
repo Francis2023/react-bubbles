@@ -17,10 +17,10 @@ function App() {
     <Router>
       <div className="App">
         <ul className="nav">
-          <li>
+          <li className="navLink">
             <Link to="/login">Login</Link>
           </li>
-          <li>
+          <li className="navLink">
             <Link to="/protected">Bubble</Link>
           </li>
         </ul>
