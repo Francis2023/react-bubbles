@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
+//import axios from "axios";
+import { axiosWithAuth } from "../utils/axiosWithAuth"
 
 const initialColor = {
   color: "",
@@ -21,10 +22,24 @@ const ColorList = ({ colors, updateColors }) => {
     // Make a put request to save your updated color
     // think about where will you get the id from...
     // where is is saved right now?
-    axios
-    .put(`http://localhost:5000/api/colors/${colors.id}`)
+    axiosWithAuth()
+    .put(`/colors/${colorToEdit.id}`, colorToEdit)
     .then(res => {
       console.log(res.data);
+      
+      axiosWithAuth()
+      .get("/colors")
+      .then(res =>  {
+        console.log(res)
+        updateColors(res.data)
+        
+      })
+    // let newlist = colors.map(colors => {if (colors.id == res.data.id) {res.data} else {colors }})
+     // let newList = colors.filter(colors => colors.id == res.data.id) 
+     // updateColors(newList)
+      //let colors = if (colors.id == res.data.id) {}
+      //let edittedColor = colors.map(colors => if (colors.id == res.data.id) {} )
+      //updateColors(res.data)
     })
     .catch(err => {
       console.log(err)
@@ -34,17 +49,18 @@ const ColorList = ({ colors, updateColors }) => {
   const deleteColor = color => {
     // make a delete request to delete this color
     //color.preventDefault();
-    axios
-      .delete(`http://localhost:5000/api/colors/${colors.id}`)
+    axiosWithAuth()
+      .delete(`/colors/${color.id}`)
       .then(res => {
-        updateColors(res.data);
-        colors.history.push("/api/colors")
+        console.log(res)
+        let newColors = colors.filter(colors => colors.id !== res.data)
+        updateColors(newColors);
+        //colors.history.push("/api/colors")
       })
       .catch(err => {
         console.log(err)
       })
   };
-
   return (
     <div className="colors-wrap">
       <p>colors</p>
